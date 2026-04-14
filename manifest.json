@@ -1,0 +1,97 @@
+{
+  "name": "MultiStreams Provider",
+  "version": "1.0.0",
+  "description": "Stream movies and series from Webshare.cz, FastShare and Hellspy with TMDB integration",
+  "author": "JezVoss",
+  "homepage": "https://github.com/your-username/multistreams-nuvio-provider",
+  "license": "AGPL-3.0",
+  "providers": [
+    {
+      "name": "multistreams",
+      "url": "https://your-username.github.io/multistreams-nuvio-provider/providers/multistreams.js",
+      "icon": "https://your-username.github.io/multistreams-nuvio-provider/icon.png",
+      "description": "Webshare.cz, FastShare and Hellspy streaming with advanced search and filters",
+      "settings": [
+        {
+          "key": "webshare_username",
+          "type": "text",
+          "label": "Webshare.cz Username",
+          "default": "",
+          "required": false
+        },
+        {
+          "key": "webshare_password",
+          "type": "password",
+          "label": "Webshare.cz Password",
+          "default": "",
+          "required": false
+        },
+        {
+          "key": "webshare_wst_token",
+          "type": "text",
+          "label": "Webshare.cz WST Token",
+          "default": "",
+          "required": false
+        },
+        {
+          "key": "fastshare_username",
+          "type": "text",
+          "label": "FastShare Username",
+          "default": "",
+          "required": false
+        },
+        {
+          "key": "fastshare_password",
+          "type": "password",
+          "label": "FastShare Password",
+          "default": "",
+          "required": false
+        },
+        {
+          "key": "hellspy_username",
+          "type": "text",
+          "label": "Hellspy Username",
+          "default": "",
+          "required": false
+        },
+        {
+          "key": "hellspy_password",
+          "type": "password",
+          "label": "Hellspy Password",
+          "default": "",
+          "required": false
+        },
+        {
+          "key": "sort_by_resolution",
+          "type": "boolean",
+          "label": "Sort by Resolution (4K > 2K > 1080p)",
+          "default": true
+        },
+        {
+          "key": "prefer_dubbing",
+          "type": "boolean",
+          "label": "Prefer CZ/SK Dubbing",
+          "default": true
+        },
+        {
+          "key": "show_4k_videos",
+          "type": "boolean",
+          "label": "Show 4K Videos",
+          "default": true
+        },
+        {
+          "key": "show_fullhd_videos",
+          "type": "boolean",
+          "label": "Show FullHD Videos",
+          "default": true
+        },
+        {
+          "key": "show_720p_videos",
+          "type": "boolean",
+          "label": "Show 720p Videos",
+          "default": true
+        }
+      ]
+    }
+  ]
+}
