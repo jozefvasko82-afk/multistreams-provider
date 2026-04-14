@@ -171,28 +171,24 @@ function formatFileSize(bytes) {
   return Math.round(bytes / Math.pow(1024, i) * 100) / 100 + ' ' + sizes[i];
 }
 
-// Simple authentication - replace with your credentials
-// IMPORTANT: Change these values to your Webshare.cz credentials
-const credentials = {
-  webshare_username: 'YOUR_USERNAME_HERE',    // <-- CHANGE THIS
-  webshare_password: 'YOUR_PASSWORD_HERE',    // <-- CHANGE THIS
-  webshare_wst_token: ''                     // <-- CHANGE THIS (optional)
-};
+// Get credentials from environment variables
+function getCredentials() {
+  return {
+    webshare_username: process.env.WEBSHARE_USERNAME || '',
+    webshare_password: process.env.WEBSHARE_PASSWORD || '',
+    webshare_wst_token: process.env.WEBSHARE_WST_TOKEN || ''
+  };
+}
 
-// Modified login function to use credentials
-async function loginWithStoredCredentials() {
-  // Check if credentials are still default values
-  if (credentials.webshare_username === 'YOUR_USERNAME_HERE') {
-    return false; // Not configured yet
-  }
+// Login with environment variables
+async function loginWithCredentials() {
+  const { webshare_username, webshare_password, webshare_wst_token } = getCredentials();
   
-  if (credentials.webshare_wst_token) {
-    // Use WST token if available
-    webshareAPI.token = credentials.webshare_wst_token;
+  if (webshare_wst_token) {
+    webshareAPI.token = webshare_wst_token;
     return true;
-  } else if (credentials.webshare_username && credentials.webshare_password) {
-    // Use username/password
-    return await webshareAPI.login(credentials.webshare_username, credentials.webshare_password);
+  } else if (webshare_username && webshare_password) {
+    return await webshareAPI.login(webshare_username, webshare_password);
   }
   
   return false;
