@@ -86,6 +86,18 @@ const webshareAPI = new WebshareAPI();
 addon.defineStreamHandler(async (args) => {
   const { type, id } = args;
   
+  // Login with stored credentials first
+  const loggedIn = await loginWithStoredCredentials();
+  if (!loggedIn) {
+    return { 
+      streams: [{
+        title: 'MultiStreams - Please configure credentials',
+        url: null,
+        description: 'Go to Add-on settings to enter your Webshare.cz credentials'
+      }]
+    };
+  }
+  
   // Extract title from ID or use default
   const title = extractTitleFromId(id) || 'Unknown';
   
@@ -99,10 +111,10 @@ addon.defineStreamHandler(async (args) => {
   // Convert to Stremio streams
   const streams = searchResults.files.slice(0, 10).map(file => ({
     title: file.name || `MultiStreams - ${file.ident}`,
-    url: webshareAPI.getStreamLink(file.ident),
-    description: `Size: ${formatFileSize(file.size) | 'Unknown'}`,
+    url: await webshareAPI.getStreamLink(file.ident),
+    description: `Size: ${formatFileSize(file.size)}`,
     behaviorHints: {
-      notReady: true
+      notReady: false
     }
   }));
 
@@ -155,10 +167,57 @@ function formatFileSize(bytes) {
   return Math.round(bytes / Math.pow(1024, i) * 100) / 100 + ' ' + sizes[i];
 }
 
-// Auto-login with demo credentials (remove in production)
-(async () => {
-  // You can add your Webshare.cz credentials here
-  // await webshareAPI.login('your_username', 'your_password');
-})();
+// Secure authentication system
+addon.defineConfigHandler(async () => {
+  return {
+    config: [
+      {
+        key: 'webshare_username',
+        type: 'text',
+        title: 'Webshare.cz Username',
+        description: 'Enter your Webshare.cz username or email'
+      },
+      {
+        key: 'webshare_password',
+        type: 'password',
+        title: 'Webshare.cz Password',
+        description: 'Enter your Webshare.cz password'
+      },
+      {
+        key: 'webshare_wst_token',
+        type: 'text',
+        title: 'Webshare.cz WST Token (Optional)',
+        description: 'If you have WST token, enter it instead of username/password'
+      }
+    ]
+  };
+});
+
+// Store credentials securely
+let storedCredentials = {};
+
+addon.defineRequestHandler(async (args) => {
+  if (args.method === 'setCredentials') {
+    storedCredentials = args.body;
+    return { success: true };
+  }
+  return null;
+});
+
+// Modified login function to use stored credentials
+async function loginWithStoredCredentials() {
+  const { webshare_username, webshare_password, webshare_wst_token } = storedCredentials;
+  
+  if (webshare_wst_token) {
+    // Use WST token if available
+    webshareAPI.token = webshare_wst_token;
+    return true;
+  } else if (webshare_username && webshare_password) {
+    // Use username/password
+    return await webshareAPI.login(webshare_username, webshare_password);
+  }
+  
+  return false;
+}
 
 module.exports = addon.getInterface();
