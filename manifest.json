@@ -1,107 +1,67 @@
 {
+  "id": "multistreams-provider",
   "name": "MultiStreams Provider",
   "version": "1.0.0",
-  "description": "Stream movies and series from Webshare.cz, FastShare and Hellspy with TMDB integration",
+  "description": "Stream movies and series from Webshare.cz, FastShare and Hellspy",
   "author": "JezVoss",
-  "homepage": "https://github.com/your-username/multistreams-nuvio-provider",
-  "license": "AGPL-3.0",
   "providers": [
     {
       "id": "multistreams",
-      "name": "multistreams",
+      "name": "MultiStreams",
       "url": "https://raw.githubusercontent.com/jozefvasko82-afk/multistreams-provider/master/providers/multistreams.js",
-      "icon": "https://raw.githubusercontent.com/jozefvasko82-afk/multistreams-provider/master/icon.png",
-      "description": "Webshare.cz, FastShare and Hellspy streaming with advanced search and filters",
       "settings": [
         {
           "id": "webshare_username",
-          "key": "webshare_username",
           "type": "text",
           "label": "Webshare.cz Username",
-          "default": "",
-          "required": false
+          "default": ""
         },
         {
           "id": "webshare_password",
-          "key": "webshare_password",
           "type": "password",
           "label": "Webshare.cz Password",
-          "default": "",
-          "required": false
+          "default": ""
         },
         {
           "id": "webshare_wst_token",
-          "key": "webshare_wst_token",
           "type": "text",
           "label": "Webshare.cz WST Token",
-          "default": "",
-          "required": false
+          "default": ""
         },
         {
           "id": "fastshare_username",
-          "key": "fastshare_username",
           "type": "text",
           "label": "FastShare Username",
-          "default": "",
-          "required": false
+          "default": ""
         },
         {
           "id": "fastshare_password",
-          "key": "fastshare_password",
           "type": "password",
           "label": "FastShare Password",
-          "default": "",
-          "required": false
+          "default": ""
         },
         {
           "id": "hellspy_username",
-          "key": "hellspy_username",
           "type": "text",
           "label": "Hellspy Username",
-          "default": "",
-          "required": false
+          "default": ""
         },
         {
           "id": "hellspy_password",
-          "key": "hellspy_password",
           "type": "password",
           "label": "Hellspy Password",
-          "default": "",
-          "required": false
-        },
-        {
-          "id": "sort_by_resolution",
-          "key": "sort_by_resolution",
-          "type": "boolean",
-          "label": "Sort by Resolution (4K > 2K > 1080p)",
-          "default": true
+          "default": ""
         },
         {
           "id": "prefer_dubbing",
-          "key": "prefer_dubbing",
           "type": "boolean",
           "label": "Prefer CZ/SK Dubbing",
           "default": true
         },
         {
-          "id": "show_4k_videos",
-          "key": "show_4k_videos",
+          "id": "sort_by_resolution",
           "type": "boolean",
-          "label": "Show 4K Videos",
-          "default": true
-        },
-        {
-          "id": "show_fullhd_videos",
-          "key": "show_fullhd_videos",
-          "type": "boolean",
-          "label": "Show FullHD Videos",
-          "default": true
-        },
-        {
-          "id": "show_720p_videos",
-          "key": "show_720p_videos",
-          "type": "boolean",
-          "label": "Show 720p Videos",
+          "label": "Sort by Resolution",
           "default": true
         }
       ]
