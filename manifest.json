@@ -8,8 +8,8 @@
   "providers": [
     {
       "name": "multistreams",
-      "url": "https://your-username.github.io/multistreams-nuvio-provider/providers/multistreams.js",
-      "icon": "https://your-username.github.io/multistreams-nuvio-provider/icon.png",
+      "url": "https://raw.githubusercontent.com/jozefvasko82-afk/multistreams-provider/master/providers/multistreams.js",
+      "icon": "https://raw.githubusercontent.com/jozefvasko82-afk/multistreams-provider/master/icon.png",
       "description": "Webshare.cz, FastShare and Hellspy streaming with advanced search and filters",
       "settings": [
         {
