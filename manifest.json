@@ -13,6 +13,7 @@
       "description": "Webshare.cz, FastShare and Hellspy streaming with advanced search and filters",
       "settings": [
         {
+          "id": "webshare_username",
           "key": "webshare_username",
           "type": "text",
           "label": "Webshare.cz Username",
@@ -20,6 +21,7 @@
           "required": false
         },
         {
+          "id": "webshare_password",
           "key": "webshare_password",
           "type": "password",
           "label": "Webshare.cz Password",
@@ -27,6 +29,7 @@
           "required": false
         },
         {
+          "id": "webshare_wst_token",
           "key": "webshare_wst_token",
           "type": "text",
           "label": "Webshare.cz WST Token",
@@ -34,6 +37,7 @@
           "required": false
         },
         {
+          "id": "fastshare_username",
           "key": "fastshare_username",
           "type": "text",
           "label": "FastShare Username",
@@ -41,6 +45,7 @@
           "required": false
         },
         {
+          "id": "fastshare_password",
           "key": "fastshare_password",
           "type": "password",
           "label": "FastShare Password",
@@ -48,6 +53,7 @@
           "required": false
         },
         {
+          "id": "hellspy_username",
           "key": "hellspy_username",
           "type": "text",
           "label": "Hellspy Username",
@@ -55,6 +61,7 @@
           "required": false
         },
         {
+          "id": "hellspy_password",
           "key": "hellspy_password",
           "type": "password",
           "label": "Hellspy Password",
@@ -62,30 +69,35 @@
           "required": false
         },
         {
+          "id": "sort_by_resolution",
           "key": "sort_by_resolution",
           "type": "boolean",
           "label": "Sort by Resolution (4K > 2K > 1080p)",
           "default": true
         },
         {
+          "id": "prefer_dubbing",
           "key": "prefer_dubbing",
           "type": "boolean",
           "label": "Prefer CZ/SK Dubbing",
           "default": true
         },
         {
+          "id": "show_4k_videos",
           "key": "show_4k_videos",
           "type": "boolean",
           "label": "Show 4K Videos",
           "default": true
         },
         {
+          "id": "show_fullhd_videos",
           "key": "show_fullhd_videos",
           "type": "boolean",
           "label": "Show FullHD Videos",
           "default": true
         },
         {
+          "id": "show_720p_videos",
           "key": "show_720p_videos",
           "type": "boolean",
           "label": "Show 720p Videos",
