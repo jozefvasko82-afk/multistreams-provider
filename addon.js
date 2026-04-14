@@ -109,14 +109,18 @@ addon.defineStreamHandler(async (args) => {
   }
 
   // Convert to Stremio streams
-  const streams = searchResults.files.slice(0, 10).map(file => ({
-    title: file.name || `MultiStreams - ${file.ident}`,
-    url: await webshareAPI.getStreamLink(file.ident),
-    description: `Size: ${formatFileSize(file.size)}`,
-    behaviorHints: {
-      notReady: false
-    }
-  }));
+  const streams = [];
+  for (const file of searchResults.files.slice(0, 10)) {
+    const streamUrl = await webshareAPI.getStreamLink(file.ident);
+    streams.push({
+      title: file.name || `MultiStreams - ${file.ident}`,
+      url: streamUrl,
+      description: `Size: ${formatFileSize(file.size)}`,
+      behaviorHints: {
+        notReady: false
+      }
+    });
+  }
 
   return { streams };
 });
