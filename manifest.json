@@ -7,6 +7,7 @@
   "license": "AGPL-3.0",
   "providers": [
     {
+      "id": "multistreams",
       "name": "multistreams",
       "url": "https://raw.githubusercontent.com/jozefvasko82-afk/multistreams-provider/master/providers/multistreams.js",
       "icon": "https://raw.githubusercontent.com/jozefvasko82-afk/multistreams-provider/master/icon.png",
