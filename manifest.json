@@ -1,11 +1,15 @@
 {
+  "manifestVersion": 1,
   "id": "multistreams",
   "name": "MultiStreams",
   "version": "1.0.0",
+  "description": "Webshare.cz streaming provider",
+  "author": "JezVoss",
   "providers": [
     {
       "id": "multistreams",
       "name": "MultiStreams",
+      "type": "streaming",
       "url": "https://raw.githubusercontent.com/jozefvasko82-afk/multistreams-provider/master/providers/simple.js"
     }
   ]
