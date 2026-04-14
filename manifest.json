@@ -1,16 +1,30 @@
 {
-  "manifestVersion": 1,
-  "id": "multistreams",
   "name": "MultiStreams",
   "version": "1.0.0",
-  "description": "Webshare.cz streaming provider",
-  "author": "JezVoss",
-  "providers": [
+  "description": "Stream movies and series from Webshare.cz, FastShare and Hellspy",
+  "logo": "https://raw.githubusercontent.com/jozefvasko82-afk/multistreams-provider/master/icon.png",
+  "catalogs": [
     {
-      "id": "multistreams",
-      "name": "MultiStreams",
-      "type": "streaming",
-      "url": "https://raw.githubusercontent.com/jozefvasko82-afk/multistreams-provider/master/providers/simple.js"
+      "type": "movie",
+      "id": "multistreams-movies"
+    },
+    {
+      "type": "series",
+      "id": "multistreams-series"
     }
-  ]
+  ],
+  "resources": [
+    {
+      "name": "stream",
+      "types": ["movie", "series"],
+      "idPrefixes": ["tt"]
+    },
+    {
+      "name": "meta",
+      "types": ["movie", "series"],
+      "idPrefixes": ["tt"]
+    }
+  ],
+  "types": ["movie", "series"],
+  "id": "multistreams"
 }
