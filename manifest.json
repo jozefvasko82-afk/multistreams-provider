@@ -6,7 +6,7 @@
     {
       "id": "multistreams",
       "name": "MultiStreams",
-      "url": "https://raw.githubusercontent.com/jozefvasko82-afk/multistreams-provider/master/providers/multistreams.js"
+      "url": "https://raw.githubusercontent.com/jozefvasko82-afk/multistreams-provider/master/providers/simple.js"
     }
   ]
 }
