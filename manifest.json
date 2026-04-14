@@ -1,70 +1,12 @@
 {
-  "id": "multistreams-provider",
-  "name": "MultiStreams Provider",
+  "id": "multistreams",
+  "name": "MultiStreams",
   "version": "1.0.0",
-  "description": "Stream movies and series from Webshare.cz, FastShare and Hellspy",
-  "author": "JezVoss",
   "providers": [
     {
       "id": "multistreams",
       "name": "MultiStreams",
-      "url": "https://raw.githubusercontent.com/jozefvasko82-afk/multistreams-provider/master/providers/multistreams.js",
-      "settings": [
-        {
-          "id": "webshare_username",
-          "type": "text",
-          "label": "Webshare.cz Username",
-          "default": ""
-        },
-        {
-          "id": "webshare_password",
-          "type": "password",
-          "label": "Webshare.cz Password",
-          "default": ""
-        },
-        {
-          "id": "webshare_wst_token",
-          "type": "text",
-          "label": "Webshare.cz WST Token",
-          "default": ""
-        },
-        {
-          "id": "fastshare_username",
-          "type": "text",
-          "label": "FastShare Username",
-          "default": ""
-        },
-        {
-          "id": "fastshare_password",
-          "type": "password",
-          "label": "FastShare Password",
-          "default": ""
-        },
-        {
-          "id": "hellspy_username",
-          "type": "text",
-          "label": "Hellspy Username",
-          "default": ""
-        },
-        {
-          "id": "hellspy_password",
-          "type": "password",
-          "label": "Hellspy Password",
-          "default": ""
-        },
-        {
-          "id": "prefer_dubbing",
-          "type": "boolean",
-          "label": "Prefer CZ/SK Dubbing",
-          "default": true
-        },
-        {
-          "id": "sort_by_resolution",
-          "type": "boolean",
-          "label": "Sort by Resolution",
-          "default": true
-        }
-      ]
+      "url": "https://raw.githubusercontent.com/jozefvasko82-afk/multistreams-provider/master/providers/multistreams.js"
     }
   ]
 }
